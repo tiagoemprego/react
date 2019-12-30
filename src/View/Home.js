@@ -18,7 +18,7 @@ export class Home extends React.Component {
                     value="Enviar"
                 />
 
-                <Api />
+                <Api subreddit="top"/>
             </form>
 
         )

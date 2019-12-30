@@ -7,7 +7,7 @@ export class Api extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(`https://www.reddit.com/r/redditdev/top.json`)
+        axios.get(`https://www.reddit.com/r/redditdev/${this.props.subreddit}.json`)
             .then(res => {
                 const posts = res.data.data.children.map(obj => obj.data);
                 this.setState({ posts });
