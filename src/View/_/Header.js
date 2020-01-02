@@ -6,11 +6,7 @@ export class Header extends React.Component {
         return (
             <ul>
                 <li>
-                    <Link to="/home">
-                        <button type="button">
-                            Click Me!
-                        </button>
-                    </Link>
+                    <a href="/home"> Click Me! </a>
                 </li>
             </ul>
         )
