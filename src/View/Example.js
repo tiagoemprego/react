@@ -1,17 +1,25 @@
-import React, { useState } from "react"
+import React from "react"
 
-function Examples() {
-    const [count, setCount] = useState(0)
+export class Examples extends React.Component {
+    state = {
+        count: 0
+    };
 
-    return (
-        <div>
-            <h1>Você cliaou { count } vezes </h1>
+    Increment = () => {
+        this.setState({count: this.state.count + 1});
+    };
 
-            <button onClick={() => setCount(count - 1)}>Decementar</button>
+    Decrement = () => {
+        this.setState({count: this.state.count - 1})
+    };
 
-            <button onClick={() => setCount(count + 1)}>Incrementar</button>
-        </div>
-    )
+    render(){
+        return (
+            <div>
+                <h1>{this.state.count}</h1>
+                <button onClick={this.Decrement.bind(this) }>- Decrement</button>
+                <button onClick={this.Increment.bind(this) }>+ Increment</button>
+            </div>
+        )
+    }
 }
-
-export default Examples;
