@@ -1,6 +1,6 @@
 import React from "react"
 import { Input } from '../Components/Input'
-import { Button } from "../Components/button"
+import { Btn } from "../Components/button"
 import { Api } from "../Components/GetApi"
 
 export class Home extends React.Component {
@@ -12,7 +12,7 @@ export class Home extends React.Component {
                     place="Nome"
                 />
 
-                <Button
+                <Btn
                     type="submit"
                     className="btn"
                     value="Enviar"

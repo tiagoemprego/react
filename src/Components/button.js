@@ -1,22 +1,18 @@
 import React from "react";
 
-const divStyle = {
-    margin: '30px 0',
-    padding: '15px',
-    border: '1px solid #ccc',
-    textAlign: 'center',
-};
+export class Btn extends React.Component{
 
-export class Button extends React.Component{
+    buttonClick = () => this.props.handleClick();
+
     render() {
         return (
-            <div style={divStyle}>
-                <input
-                    type={this.props.type}
-                    className={this.props.className}
-                    value={this.props.value}
-                />
-            </div>
+            <button
+                onClick={() => this.buttonClick()}
+                className={this.props.className}>
+                {this.props.text}
+            </button>
         )
     }
 }
+
+export default Btn;
