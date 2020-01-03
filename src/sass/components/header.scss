@@ -1,0 +1,22 @@
+.header{
+    text-align: center;
+    padding: 15px;
+    background-color: indianred;
+
+    ul{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        li{
+            padding: 0 7.5px;
+        }
+    }
+
+    a{
+        color: #dddddd;
+        font-weight: bold;
+        text-decoration: none;
+        font-family: Arial,sans-serif;
+    }
+}

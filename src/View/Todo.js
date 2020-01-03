@@ -1,7 +1,7 @@
 import React from "react"
 import Btn from "../Components/button"
 
-export class Examples extends React.Component {
+export class Todo extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -41,7 +41,7 @@ export class Examples extends React.Component {
     render(){
         return (
             <div className="todoListMain">
-                <div className="header">
+                <div className="form">
                     <form onSubmit={this.handleSubmit}>
                         <input value={this.state.value} onChange={this.handleChange} placeholder="Task" />
                         <button className="btn" type="submit">Add Task</button>

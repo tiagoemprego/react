@@ -4,11 +4,16 @@ import React from "react"
 export class Header extends React.Component {
     render() {
         return (
-            <ul>
-                <li>
-                    <a href="/home"> Click Me! </a>
-                </li>
-            </ul>
+            <div className="header">
+                <ul>
+                    <li>
+                        <a href="/home">Home</a>
+                    </li>
+                    <li>
+                        <a href="/todo">Todo</a>
+                    </li>
+                </ul>
+            </div>
         )
     }
 }
