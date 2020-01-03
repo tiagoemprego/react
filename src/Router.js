@@ -18,7 +18,6 @@ const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={ () => <h1> Hello World </h1> }/>
-            <PrivateRoute exact path="/app" name="app" component={ () => <h1> Você esta logado!!! </h1> }/>
             <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
             <PrivateRoute exact path="/exemplos" name="exemplos" component={ () => <Examples /> }/>
         </Switch>
