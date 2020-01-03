@@ -36,7 +36,7 @@ export class Examples extends React.Component {
         event.preventDefault();
         this.setState(state => {
             if (this.state.value !== ''){
-                const list = state.addItems.push({'name': this.state.value});
+                const list = state.addItems.push(this.state.value);
                 return {
                     list,
                     value: '',
@@ -44,6 +44,16 @@ export class Examples extends React.Component {
             }
         });
     }
+
+    onRemoveItem = i => {
+        const list = this.state.addItems.filter((item, j) => {
+            return i !== j
+        });
+
+        this.setState({
+            addItems: list,
+        })
+    };
 
     render(){
         return (
@@ -58,7 +68,7 @@ export class Examples extends React.Component {
                 <div className="listToDo">
                     <ul>
                         {this.state.addItems.map(
-                            (items, key) => (<li key={key} >{items.name}</li>)
+                            (items, key) => (<li key={key} >{items}  <button onClick={() => this.onRemoveItem(key)}>X</button></li>)
                         )}
                     </ul>
                 </div>
