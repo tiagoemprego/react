@@ -15,6 +15,9 @@ export class Header extends React.Component {
                     <li>
                         <a href="/conversor">Conversor</a>
                     </li>
+                    <li>
+                        <a href="/accordion">Accordion</a>
+                    </li>
                 </ul>
             </div>
         )

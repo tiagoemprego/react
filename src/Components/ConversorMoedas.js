@@ -1,5 +1,6 @@
 import React from "react"
 import CurrencyFormat from "react-currency-format"
+import helpers from "../helpers";
 
 export class ConversorMoedas extends React.Component {
     constructor(props) {
@@ -38,9 +39,9 @@ export class ConversorMoedas extends React.Component {
         return (
             <div className="conversor">
                 <h1>{this.props.moedaA} para {this.props.moedaB}</h1>
-                <CurrencyFormat thousandSeparator={true} type="text" onChange={this.handleConvert}/>
+                <CurrencyFormat type="text" onChange={this.handleConvert}/>
                 <button onClick={this.converter}>Converter</button>
-                <h2>{this.state.moedaB_valor}</h2>
+                <h2>{helpers.numberToReal(`${this.props.moedaB} `, parseFloat(this.state.moedaB_valor))}</h2>
             </div>
         )
     }

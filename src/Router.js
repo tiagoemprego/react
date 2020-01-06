@@ -3,6 +3,7 @@ import { isAuthenticated } from "./auth/auth";
 import { Home } from './View/Home';
 import {Todo} from "./View/Todo";
 import {Conversor} from "./View/Conversor";
+import {Accordion} from "./View/Accordion";
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -22,6 +23,7 @@ const Routes = () => (
             <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
             <PrivateRoute exact path="/todo" name="todo" component={ () => <Todo /> }/>
             <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
+            <PrivateRoute exact path="/accordion" name="Accordion" component={ () => <Accordion /> }/>
         </Switch>
     </BrowserRouter>
 );
