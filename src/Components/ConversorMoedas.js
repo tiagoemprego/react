@@ -1,4 +1,5 @@
 import React from "react"
+import CurrencyFormat from "react-currency-format"
 
 export class ConversorMoedas extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ export class ConversorMoedas extends React.Component {
         this.state = {
             moedaA_valor: "",
             moedaB_valor: 0
-        }
+        };
 
         this.converter = this.converter.bind(this)
     }
@@ -16,32 +17,29 @@ export class ConversorMoedas extends React.Component {
         this.setState({
             moedaA_valor: event.target.value
         });
-
-        console.log(this.state.moedaA_valor)
-    }
+    };
 
     converter(){
         let de_para = `${this.props.moedaA}_${this.props.moedaB}`;
         let url = `https://free.currconv.com/api/v7/convert?q=${de_para}&compact=ultra&apiKey=5cac70ccca831011490b`;
 
         fetch(url)
-            .then( res=> res.json())
-            .then(json => {
-                let cotacao = json[de_para]
-                let moedaB_valor = ( parseFloat(this.state.moedaA_valor) * cotacao).toFixed(2)
+            .then( res => res.json())
+            .then( json => {
+                let cotacao = json[de_para];
+                let valor = this.state.moedaA_valor.split(',').join('');
+                let moedaB_valor = ( parseFloat(valor) * cotacao).toFixed(2);
+                if (isNaN(moedaB_valor)) return;
                 this.setState({moedaB_valor})
             })
-
-
-        console.log(this.state)
     }
 
     render(){
         return (
             <div className="conversor">
                 <h1>{this.props.moedaA} para {this.props.moedaB}</h1>
-                <input type="text" onChange={this.handleConvert}/>
-                <input type="button" value="converter" onClick={this.converter}/>
+                <CurrencyFormat thousandSeparator={true} type="text" onChange={this.handleConvert}/>
+                <button onClick={this.converter}>Converter</button>
                 <h2>{this.state.moedaB_valor}</h2>
             </div>
         )

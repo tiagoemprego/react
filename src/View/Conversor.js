@@ -8,7 +8,6 @@ export class Conversor extends React.Component {
             <div>
                 <div className="wrapper-converter">
                     <ConversorMoedas moedaA="USD" moedaB="BRL"/>
-                    <ConversorMoedas moedaA="BRL" moedaB="USD"/>
                 </div>
             </div>
         )
