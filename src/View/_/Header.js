@@ -12,6 +12,9 @@ export class Header extends React.Component {
                     <li>
                         <a href="/todo">Todo</a>
                     </li>
+                    <li>
+                        <a href="/conversor">Conversor</a>
+                    </li>
                 </ul>
             </div>
         )

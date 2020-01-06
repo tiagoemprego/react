@@ -3,3 +3,26 @@
   margin: auto;
   padding: 0 15px;
 }
+
+.wrapper-converter{
+  display: flex;
+  max-width: 800px;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 20px;
+  margin: auto;
+}
+.conversor{
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+  margin-bottom: 20px;
+
+  input{
+    padding: 10px 15px;
+  }
+
+  h1,input{
+    margin-bottom: 15px;
+  }
+}
