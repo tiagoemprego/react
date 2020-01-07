@@ -18,6 +18,8 @@ const Selects = styled.div`
         margin-bottom: 20px;
         max-width: 140px;
         width: 100%;
+        background: #fff;
+        border-radius: 0;
     }
 `;
 
@@ -62,7 +64,7 @@ export class ConversorMoedas extends React.Component {
             <div className="conversor">
                 <Selects>
                     <select name="usd" id="valueA" onChange={this.btnA}>
-                        <option value="">Moeda A</option>
+                        <option value="USD">Moeda A</option>
                         <option value="USD">USD</option>
                         <option value="BRL">BRL</option>
                         <option value="CAD">CAD</option>
@@ -70,7 +72,7 @@ export class ConversorMoedas extends React.Component {
                         <option value="FKP">FKP</option>
                     </select>
                     <select name="usd" id="valueB" onChange={this.btnB}>
-                        <option value="">Moeda B</option>
+                        <option value="BRL">Moeda B</option>
                         <option value="BRL">BRL</option>
                         <option value="USD">USD</option>
                         <option value="CAD">CAD</option>
