@@ -1,6 +1,11 @@
 import React from "react"
 import CurrencyFormat from "react-currency-format"
 import helpers from "../helpers";
+import styled from "styled-components"
+
+const Selects = styled.div`
+    display: flex;
+`;
 
 export class ConversorMoedas extends React.Component {
     constructor(props) {
@@ -35,9 +40,30 @@ export class ConversorMoedas extends React.Component {
             })
     }
 
+    btnA = el => this.props.handleSelectA(el.target.value);
+    btnB = el => this.props.handleSelectB(el.target.value);
+
     render(){
         return (
             <div className="conversor">
+                <Selects>
+                    <select name="usd" id="valueA" onChange={this.btnA}>
+                        <option value="">Selecione uma moeda</option>
+                        <option value="USD">USD</option>
+                        <option value="BRL">BRL</option>
+                        <option value="CAD">CAD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="FKP">FKP</option>
+                    </select>
+                    <select name="usd" id="valueB" onChange={this.btnB}>
+                        <option value="">Selecione uma moeda</option>
+                        <option value="BRL">BRL</option>
+                        <option value="USD">USD</option>
+                        <option value="CAD">CAD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="FKP">FKP</option>
+                    </select>
+                </Selects>
                 <h1>{this.props.moedaA} para {this.props.moedaB}</h1>
                 <CurrencyFormat type="text" onChange={this.handleConvert}/>
                 <button onClick={this.converter}>Converter</button>
