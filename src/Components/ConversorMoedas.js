@@ -5,6 +5,20 @@ import styled from "styled-components"
 
 const Selects = styled.div`
     display: flex;
+    justify-content: space-between;
+    
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;       /* Remove default arrow */
+        outline: none;
+        padding: 10px 0;
+        border: 0;
+        border-bottom: 2px solid #ddd;
+        margin-bottom: 20px;
+        max-width: 140px;
+        width: 100%;
+    }
 `;
 
 export class ConversorMoedas extends React.Component {
@@ -48,7 +62,7 @@ export class ConversorMoedas extends React.Component {
             <div className="conversor">
                 <Selects>
                     <select name="usd" id="valueA" onChange={this.btnA}>
-                        <option value="">Selecione uma moeda</option>
+                        <option value="">Moeda A</option>
                         <option value="USD">USD</option>
                         <option value="BRL">BRL</option>
                         <option value="CAD">CAD</option>
@@ -56,7 +70,7 @@ export class ConversorMoedas extends React.Component {
                         <option value="FKP">FKP</option>
                     </select>
                     <select name="usd" id="valueB" onChange={this.btnB}>
-                        <option value="">Selecione uma moeda</option>
+                        <option value="">Moeda B</option>
                         <option value="BRL">BRL</option>
                         <option value="USD">USD</option>
                         <option value="CAD">CAD</option>
