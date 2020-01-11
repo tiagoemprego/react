@@ -1,6 +1,6 @@
 // import Decode from "jwt-decode"
 
-export const isAuthenticated = () => true
+export const isAuthenticated = () => false
 // export const isAuthenticated = () => {
 //     const token = localStorage.getItem('token');
 //     const refreshToken = localStorage.getItem('refreshToken');

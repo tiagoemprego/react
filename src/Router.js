@@ -1,6 +1,6 @@
 import React from "react";
 import { isAuthenticated } from "./auth/auth";
-import { Login } from './View/Login/index';
+import Form from './View/Login/index';
 import { Home } from './View/Home';
 import { Todo } from "./View/Todo";
 import { Conversor } from "./View/Conversor";
@@ -20,7 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 const Routes = () => (
     <BrowserRouter>
         <Switch>
-            <Route exact path="/login" component={ () => <Login/> }/>
+            <Route exact path="/login" component={ () => <Form/> }/>
             <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
             <PrivateRoute exact path="/todo" name="todo" component={ () => <Todo /> }/>
             <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
