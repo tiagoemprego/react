@@ -1,6 +1,7 @@
 import styled from "styled-components"
 
 export const Div = styled.div`
+    background-color: #202020;
     input{
         background: #202020;
         border: 0;
@@ -30,6 +31,11 @@ export const Div = styled.div`
             outline: none;
         }
         
+        &.error{
+            border-color: red;
+            color: red;
+        }
+        
         &:-webkit-autofill,
         &:-webkit-autofill:hover, 
         &:-webkit-autofill:focus, 
@@ -47,18 +53,16 @@ export const Div = styled.div`
             position: absolute;
             transition: all .2s ease-in-out;
             left: 5px;
+            color: white;
             
             &.active{
                 position: absolute;
                 font-size: 12px;
                 margin-top: -15px;
                 transition: all .2s ease-in-out;
+                background-color: transparent;
             }
         }
-    }
-    
-    .form-label{
-        color: #ffffff;
     }
     
     .form-control:focus{
