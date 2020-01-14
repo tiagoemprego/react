@@ -1,5 +1,7 @@
 import React from "react"
 import styled from "styled-components"
+import {Container ,Row, Col} from 'react-bootstrap';
+
 const contentful = require("contentful");
 
 const Loop = styled.div`
@@ -18,6 +20,69 @@ const Loop = styled.div`
         max-width: 100%;
     }
     
+    .img-radio{
+        img{
+            max-width: 300px;
+            width: 100%;
+        
+        }
+    }
+    
+    .wrapper-social{
+        a{
+            width: 45px;
+            height: 45px;
+            left: 370px;
+            top: 575px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+            display: inline-block;
+            border-radius: 50%;
+            padding: 10px;
+        }
+    }
+    
+    .header-content{
+        background-image: url("https://i0.wp.com/www.megajuridico.com/wp-content/uploads/2018/04/direitos-em-show-e-eventos.jpg?fit=1280%2C720&ssl=1");
+        min-height: 512px;
+        background-position: 100% -272px;
+        background-repeat: no-repeat;
+        position: relative;
+        margin-bottom: 70px;
+        
+        .wrapper-text{
+            h2{
+                font-weight: normal;
+                font-size: 60px;
+                line-height: 72px;
+                color: #FFFFFF;
+            }
+            
+            p{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 28px;
+                line-height: 34px;
+                color: #FFFFFF;
+                
+                span{
+                    font-style: normal;
+                    font-weight: 300;
+                    font-size: 18px;
+                    line-height: 22px;
+                    text-transform: uppercase;
+                    color: #000000;
+                }
+
+            }
+        }
+        
+        .row{
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+        }
+    }
 `;
 
 export class ContentFull extends React.Component {
@@ -43,13 +108,79 @@ export class ContentFull extends React.Component {
             })
             .catch(err => console.log(err));
 
+        window.addEventListener('scroll', this.updateDimensions.bind(this));
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.updateDimensions.bind(this));
+    }
+
+    updateDimensions() {
+        console.log(document.getElementById("header").scrollHeight );
     }
 
     render(){
         return (
             <div>
-                <h1>teste</h1>
                 <Loop>
+                    <Container>
+                        <div id="header" className="header-content">
+                            <Row>
+                                <Col className="img-radio" xs={3}>
+                                    <img src="http://images.ctfassets.net/jargsxeq3u04/70oPvlkJjDIbuUYxF5VE9C/4db67e52ddc03eb3e06f41b5c53ae774/1024px-Circle-icons-tools.svg.png" alt=""/>
+                                </Col>
+                                <Col className="align-self-end pb-3" xs={6}>
+                                    <div className="wrapper-text">
+                                        <h2>Backstreet Boys</h2>
+                                        <p>World Tour 2020</p>
+                                    </div>
+
+                                    <div className="wrapper-social">
+                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
+                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
+                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
+                                        <a href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
+                                    </div>
+                                    <div className="wrapper-text">
+                                        <p><span>Compartilhar</span></p>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </div>
+                    </Container>
+                    <ul>
+                        {this.state.articles.map(
+                            (el, key) =>
+                                <li key={key} >
+                                    <h2>{el.fields.title} {key}</h2>
+                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
+                                    <p>{el.fields.content}</p>
+                                </li>
+
+                        )}
+                    </ul>
+                    <ul>
+                        {this.state.articles.map(
+                            (el, key) =>
+                                <li key={key} >
+                                    <h2>{el.fields.title} {key}</h2>
+                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
+                                    <p>{el.fields.content}</p>
+                                </li>
+
+                        )}
+                    </ul>
+                    <ul>
+                        {this.state.articles.map(
+                            (el, key) =>
+                                <li key={key} >
+                                    <h2>{el.fields.title} {key}</h2>
+                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
+                                    <p>{el.fields.content}</p>
+                                </li>
+
+                        )}
+                    </ul>
                     <ul>
                         {this.state.articles.map(
                             (el, key) =>
