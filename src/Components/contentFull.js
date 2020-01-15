@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import {Container ,Row, Col} from 'react-bootstrap';
+import useScrollPosition from "../Components/Scroll/Scroll"
 
 const contentful = require("contentful");
 
@@ -116,14 +117,14 @@ export class ContentFull extends React.Component {
     }
 
     updateDimensions() {
-        console.log(document.getElementById("header").scrollHeight );
+
     }
 
     render(){
         return (
             <div>
                 <Loop>
-                    <Container>
+                    <Container onScroll={this.updateDimensions()}>
                         <div id="header" className="header-content">
                             <Row>
                                 <Col className="img-radio" xs={3}>
@@ -147,6 +148,7 @@ export class ContentFull extends React.Component {
                                 </Col>
                             </Row>
                         </div>
+                        <div id="example">example</div>
                     </Container>
                     <ul>
                         {this.state.articles.map(

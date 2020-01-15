@@ -40,3 +40,18 @@
     margin-bottom: 15px;
   }
 }
+
+#element{
+    background-color: red;
+    //height: 500px;
+    min-height: 200px;
+    max-height: 500px;
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+}
+    .ff{
+        padding-top: 500px;
+    }
