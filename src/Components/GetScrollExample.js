@@ -3,13 +3,15 @@ import useScrollPosition from "../Components/Scroll/Scroll"
 
 export function Scrollyng() {
     const scroll = useScrollPosition();
-    console.log(((scroll.top / document.body.offsetHeight) * 100).toFixed(0) );
+    console.log(scroll.top)
 
-    const x = (((scroll.top / document.body.offsetHeight)) * 100).toFixed(2);
+    // console.log(((scroll.top / document.body.offsetHeight) * 100).toFixed(0) );
+    //
+    const x = scroll.top
 
     return (
         <div className="ff">
-            <div id="element" style={{"height": x+"%"}}>
+            <div id="element" style={{"height": x+"px"}}>
                 {x}
             </div>
             <div className="App">

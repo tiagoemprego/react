@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export class Header extends React.Component {
     render() {
@@ -7,16 +7,16 @@ export class Header extends React.Component {
             <div className="header">
                 <ul>
                     <li>
-                        <a href="/home">Home</a>
+                        <Link to="/home">Home</Link>
                     </li>
                     <li>
-                        <a href="/todo">Todo</a>
+                        <Link to="/todo">Todo</Link>
                     </li>
                     <li>
-                        <a href="/conversor">Conversor</a>
+                        <Link to="/conversor">Conversor</Link>
                     </li>
                     <li>
-                        <a href="/accordion">Accordion</a>
+                        <Link to="/accordion">Accordion</Link>
                     </li>
                 </ul>
             </div>

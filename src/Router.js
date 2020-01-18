@@ -5,6 +5,7 @@ import { Home } from './View/Home';
 import { Todo } from "./View/Todo";
 import { Conversor } from "./View/Conversor";
 import { Accordion } from "./View/Accordion";
+import {Header} from "./View/_/Header"
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -19,6 +20,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const Routes = () => (
     <BrowserRouter>
+        <Header/>
         <Switch>
             <Route exact path="/login" component={ () => <Form/> }/>
             <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
