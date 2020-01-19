@@ -1,18 +1,12 @@
 import React from "react"
 import useScrollPosition from "../Components/Scroll/Scroll"
 
-export function Scrollyng() {
+function Scrollyng() {
     const scroll = useScrollPosition();
-    console.log(scroll.top)
-
-    // console.log(((scroll.top / document.body.offsetHeight) * 100).toFixed(0) );
-    //
-    const x = scroll.top
-
     return (
         <div className="ff">
-            <div id="element" style={{"height": x+"px"}}>
-                {x}
+            <div id="element" style={{"height": scroll.top+"px"}}>
+                <img src="https://i0.wp.com/claudianosilva.com.br/wp-content/uploads/2017/11/Helbor-Wide-S%C3%A3o-Paulo.jpg?fit=1920%2C1000&ssl=1" alt=""/>
             </div>
             <div className="App">
                 <h2>O que é Lorem Ipsum?</h2><br/>

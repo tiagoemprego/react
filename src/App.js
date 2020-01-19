@@ -5,12 +5,6 @@ import './sass/App.scss'
 
 // const App = () => <Routes />;
 function App() {
-    return (
-        <div>
-            <div className="container">
-                <Routes />
-            </div>
-        </div>
-    );
+    return <Routes />
 }
 export default App;
