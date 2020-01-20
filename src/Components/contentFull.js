@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-import {Container ,Row, Col} from 'react-bootstrap';
+import {Container ,Row, Col} from 'react-bootstrap'
+import { connect } from "formik"
 import useScrollPosition from "../Components/Scroll/Scroll"
 
 const contentful = require("contentful");
@@ -86,7 +87,7 @@ const Loop = styled.div`
     }
 `;
 
-export class ContentFull extends React.Component {
+class ContentFull extends React.Component {
     constructor(props){
         super(props);
 
@@ -150,6 +151,8 @@ export class ContentFull extends React.Component {
                         </div>
                         <div id="example">example</div>
                     </Container>
+                    <div className="App">
+
                     <ul>
                         {this.state.articles.map(
                             (el, key) =>
@@ -161,41 +164,14 @@ export class ContentFull extends React.Component {
 
                         )}
                     </ul>
-                    <ul>
-                        {this.state.articles.map(
-                            (el, key) =>
-                                <li key={key} >
-                                    <h2>{el.fields.title} {key}</h2>
-                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
-                                    <p>{el.fields.content}</p>
-                                </li>
 
-                        )}
-                    </ul>
-                    <ul>
-                        {this.state.articles.map(
-                            (el, key) =>
-                                <li key={key} >
-                                    <h2>{el.fields.title} {key}</h2>
-                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
-                                    <p>{el.fields.content}</p>
-                                </li>
+                     {JSON.stringify(module)}
 
-                        )}
-                    </ul>
-                    <ul>
-                        {this.state.articles.map(
-                            (el, key) =>
-                                <li key={key} >
-                                    <h2>{el.fields.title} {key}</h2>
-                                    <img src={el.fields.imageField.fields.file.url} alt=""/>
-                                    <p>{el.fields.content}</p>
-                                </li>
-
-                        )}
-                    </ul>
+                    </div>
                 </Loop>
             </div>
         )
     }
 }
+
+export default connect(state => ({ contentElement: this.state.contentFull}))(ContentFull)
