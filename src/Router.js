@@ -6,6 +6,7 @@ import { Todo } from "./View/Todo";
 import { Conversor } from "./View/Conversor";
 import { Accordion } from "./View/Accordion";
 import {Header} from "./View/_/Header"
+import Mirror from "./View/Mirror"
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const Routes = () => (
             <PrivateRoute exact path="/todo" name="todo" component={ () => <Todo /> }/>
             <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
             <PrivateRoute exact path="/accordion" name="Accordion" component={ () => <Accordion /> }/>
+            <PrivateRoute exact path="/espelho" name="Espelho" component={ () => <Mirror /> }/>
         </Switch>
     </BrowserRouter>
 );

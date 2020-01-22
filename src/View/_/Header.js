@@ -18,6 +18,9 @@ export class Header extends React.Component {
                     <li>
                         <Link to="/accordion">Accordion</Link>
                     </li>
+                    <li>
+                        <Link to="/espelho">Espelho</Link>
+                    </li>
                 </ul>
             </div>
         )
