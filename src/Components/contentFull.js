@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import {Container ,Row, Col} from 'react-bootstrap'
-import { connect } from "formik"
-import useScrollPosition from "../Components/Scroll/Scroll"
+import { connect } from "react-redux"
 
 const contentful = require("contentful");
 
@@ -109,48 +107,12 @@ class ContentFull extends React.Component {
         console.log(this.state.articles)
             })
             .catch(err => console.log(err));
-
-        window.addEventListener('scroll', this.updateDimensions.bind(this));
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.updateDimensions.bind(this));
-    }
-
-    updateDimensions() {
-
     }
 
     render(){
         return (
             <div>
                 <Loop>
-                    <Container onScroll={this.updateDimensions()}>
-                        <div id="header" className="header-content">
-                            <Row>
-                                <Col className="img-radio" xs={3}>
-                                    <img src="http://images.ctfassets.net/jargsxeq3u04/70oPvlkJjDIbuUYxF5VE9C/4db67e52ddc03eb3e06f41b5c53ae774/1024px-Circle-icons-tools.svg.png" alt=""/>
-                                </Col>
-                                <Col className="align-self-end pb-3" xs={6}>
-                                    <div className="wrapper-text">
-                                        <h2>Backstreet Boys</h2>
-                                        <p>World Tour 2020</p>
-                                    </div>
-
-                                    <div className="wrapper-social">
-                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
-                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
-                                        <a className="mr-3" href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
-                                        <a href="#"><img src="https://image.flaticon.com/icons/png/128/20/20673.png" alt=""/></a>
-                                    </div>
-                                    <div className="wrapper-text">
-                                        <p><span>Compartilhar</span></p>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </div>
-                        <div id="example">example</div>
-                    </Container>
                     <div className="App">
 
                     <ul>
@@ -174,4 +136,4 @@ class ContentFull extends React.Component {
     }
 }
 
-export default connect(state => ({ contentElement: this.state.contentFull}))(ContentFull)
+export default connect(state => ({ contentFull: state.contentFull}))(ContentFull)

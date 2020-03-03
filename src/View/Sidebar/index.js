@@ -19,9 +19,9 @@ const  Sidebar = ({ modules, dispatch }) => (
                     {module.lessons.map(lesson => (
                         <li key={lesson.id}>
                             {lesson.title}
-                            <button onClick={() => dispatch(toogleLesson(module, lesson))}>
-                                Selecionar
-                            </button>
+                            {/*<button onClick={() => dispatch(toogleLesson(module, lesson))}>*/}
+                            {/*    Selecionar*/}
+                            {/*</button>*/}
                         </li>
                     ))}
                 </ul>
