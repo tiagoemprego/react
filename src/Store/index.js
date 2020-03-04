@@ -21,9 +21,23 @@ const INITIAL_STATE = {
     ],
     modelContent: [
         {
-            id: 1, title: "ContentFull example",
+            id: 1, title: "ContentFull example 1",
             lessons: [
-                {id: 1, title: "exemplo de chamada"},
+                {id: 1, title: "exemplo de chamada 1"},
+                {id: 2, title: "chamando o exemplo 2"}
+            ]
+        },
+        {
+            id: 2, title: "ContentFull example 2",
+            lessons: [
+                {id: 1, title: "exemplo de chamada 1"},
+                {id: 2, title: "chamando o exemplo 2"}
+            ]
+        },
+        {
+            id: 2, title: "ContentFull example 2",
+            lessons: [
+                {id: 1, title: "exemplo de chamada 1"},
                 {id: 2, title: "chamando o exemplo 2"}
             ]
         },
@@ -31,7 +45,8 @@ const INITIAL_STATE = {
 }
 
 function reducer(state = INITIAL_STATE, action) {
-    console.log(action)
+    // console.log(action)
+    // console.log(state)
     return state
 }
 
