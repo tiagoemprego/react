@@ -104,10 +104,16 @@ class ContentFull extends React.Component {
             .then((response) => {
                 let content = response.items;
                 this.setState({articles: content});
-        console.log(this.state.articles)
+        // console.log(this.state.articles)
             })
             .catch(err => console.log(err));
+
+        this.element()
     }
+
+    element = () => {
+        console.log('>>>>>', this.modelContent)
+    };
 
     render(){
         return (
@@ -127,7 +133,7 @@ class ContentFull extends React.Component {
                         )}
                     </ul>
 
-                     {JSON.stringify(module)}
+                     {/*{JSON.stringify(this.element())}*/}
 
                     </div>
                 </Loop>
@@ -136,4 +142,4 @@ class ContentFull extends React.Component {
     }
 }
 
-export default connect(state => ({ contentFull: state.contentFull}))(ContentFull)
+export default connect(state => ({ modelContent: state.modelContent}))(ContentFull)

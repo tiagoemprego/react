@@ -19,7 +19,7 @@ const INITIAL_STATE = {
             ]
         }
     ],
-    contentFull: [
+    modelContent: [
         {
             id: 1, title: "ContentFull example",
             lessons: [
