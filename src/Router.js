@@ -9,6 +9,8 @@ import {Header} from "./View/_/Header"
 import Mirror from "./View/Mirror"
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import Store from "./Store";
+import {Provider} from "react-redux";
 
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -23,12 +25,14 @@ const Routes = () => (
     <BrowserRouter>
         <Header/>
         <Switch>
-            <Route exact path="/login" component={ () => <Form/> }/>
-            <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
-            <PrivateRoute exact path="/todo" name="todo" component={ () => <Todo /> }/>
-            <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
-            <PrivateRoute exact path="/accordion" name="Accordion" component={ () => <Accordion /> }/>
-            <PrivateRoute exact path="/espelho" name="Espelho" component={ () => <Mirror /> }/>
+            <Provider store={Store}>
+                <Route exact path="/login" component={ () => <Form/> }/>
+                <PrivateRoute exact path="/home" name="home" component={ () => <Home /> }/>
+                <PrivateRoute exact path="/todo" name="todo" component={ () => <Todo /> }/>
+                <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
+                <PrivateRoute exact path="/accordion" name="Accordion" component={ () => <Accordion /> }/>
+                <PrivateRoute exact path="/espelho" name="Espelho" component={ () => <Mirror /> }/>
+            </Provider>
         </Switch>
     </BrowserRouter>
 );

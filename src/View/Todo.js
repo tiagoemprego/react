@@ -1,6 +1,6 @@
 import React from "react"
 import Btn from "../Components/button"
-import Scrollyng from "../Components/GetScrollExample"
+// import Scrollyng from "../Components/GetScrollExample"
 export class Todo extends React.Component {
     constructor(props){
         super(props);
@@ -40,8 +40,8 @@ export class Todo extends React.Component {
 
     render(){
         return (
-            <div className="todoListMain">
-                <Scrollyng />
+            <div className="container todoListMain">
+                {/*<Scrollyng />*/}
                 <div className="form">
                     <form onSubmit={this.handleSubmit}>
                         <input value={this.state.value} onChange={this.handleChange} placeholder="Task" />

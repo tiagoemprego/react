@@ -1,6 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
-const contentful = require("contentful");
+import client from "../Services/api";
 
 class ContentFull extends React.Component {
     constructor(props){
@@ -17,11 +17,6 @@ class ContentFull extends React.Component {
     };
 
     componentDidMount() {
-        const client = contentful.createClient({
-            space: "jargsxeq3u04",
-            accessToken: "2dYzy4WEFfRWF5N3RbFNdo9i0eZOBV0F2okfH3XedE4"
-        });
-
         client.getEntries()
             .then((response) => {
                 let content = response.items;
@@ -35,7 +30,7 @@ class ContentFull extends React.Component {
 
     render(){
         return (
-            <div className="App">
+            <>
                 <div className="row">
                     {this.state.articles.map(
                         (el, key) =>
@@ -47,7 +42,7 @@ class ContentFull extends React.Component {
                     )}
                 </div>
                 <p>aqui - {this.props.xablau[1]?.title}</p>
-            </div>
+            </>
         )
     }
 }
