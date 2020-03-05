@@ -41,7 +41,12 @@ class ContentFull extends React.Component {
                             </div>
                     )}
                 </div>
-                <p>aqui - {this.props.xablau[1]?.title}</p>
+
+                {this.props.xablau.map((ele, key) =>
+                    <div key={key}>
+                        <p>{ele.id} - {ele.title}</p>
+                    </div>
+                )}
             </>
         )
     }
