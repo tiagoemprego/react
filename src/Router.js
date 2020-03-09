@@ -7,6 +7,7 @@ import { Conversor } from "./View/Conversor";
 import { Accordion } from "./View/Accordion";
 import {Header} from "./View/_/Header"
 import Mirror from "./View/Mirror"
+import ConsultApi from "./View/ConsultApi";
 
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Store from "./Store";
@@ -32,6 +33,7 @@ const Routes = () => (
                 <PrivateRoute exact path="/conversor" name="conversor" component={ () => <Conversor /> }/>
                 <PrivateRoute exact path="/accordion" name="Accordion" component={ () => <Accordion /> }/>
                 <PrivateRoute exact path="/espelho" name="Espelho" component={ () => <Mirror /> }/>
+                <PrivateRoute exact path="/api" name="api" component={ () => <ConsultApi /> }/>
             </Provider>
         </Switch>
     </BrowserRouter>
