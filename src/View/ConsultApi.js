@@ -12,7 +12,7 @@ function DataLoader() {
     },[]);
 
     function openModal(id) {
-        data.map((item) => {
+        data.filter(item => {
             if (id === item._id){
                 console.log(item)
             }
