@@ -1,5 +1,6 @@
 const apiJson = {
-    url: 'http://www.json-generator.com/api/json/get/bOXpBVdazS?indent=2'
+    url: 'https://api.rawg.io/api/games',
+    page: 'https://api.rawg.io/api/games?page=2'
 }
 
 export default apiJson
